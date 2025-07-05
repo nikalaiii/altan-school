@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useCallback } from 'react';
+import React, { createContext, useState, useContext, useCallback, useRef } from 'react';
 
 type ClickContextType = {
   isActive: boolean;
@@ -9,13 +9,16 @@ const ClickContext = createContext<ClickContextType | undefined>(undefined);
 
 export const ClickProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isActive, setIsActive] = useState(false);
-  let timeoutRef: NodeJS.Timeout;
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
   const triggerClick = useCallback(() => {
     setIsActive(true);
 
-    clearTimeout(timeoutRef);
-    timeoutRef = setTimeout(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    
+    timeoutRef.current = setTimeout(() => {
       setIsActive(false);
     }, 5000);
   }, []);

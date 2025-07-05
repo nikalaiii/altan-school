@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 import styles from "./categories.module.scss";
-import { useClickContext } from "../../shared/api/ClickContext/ClickContext";
+import { useClickContext } from "../../shared/contexts/ClickContext/ClickContext";
 
 export const Categories: React.FC = () => {
   const typography = useSelector(

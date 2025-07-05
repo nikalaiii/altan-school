@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 import styles from "./collection.module.scss";
-import { useClickContext } from "../../shared/api/ClickContext/ClickContext";
+import { useClickContext } from "../../shared/contexts/ClickContext/ClickContext";
 
 export const Collection: React.FC = () => {
   const typography = useSelector(
@@ -26,8 +26,8 @@ export const Collection: React.FC = () => {
             Object.values(media).map((image, index) => {
               return (
                 <img
-                key={index}
-                onClick={() => triggerClick()}
+                  key={index}
+                  onClick={() => triggerClick()}
                   src={image ?? `./images/collection_${index + 1}.png`}
                   alt="collection image"
                   className={`${styles.collection__image} ${

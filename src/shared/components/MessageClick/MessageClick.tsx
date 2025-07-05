@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import styles from "./messageClick.module.scss";
-import { useClickContext } from "../../api/ClickContext/ClickContext";
+import { useClickContext } from "../../contexts/ClickContext/ClickContext";
 
 export const MessageClick = () => {
   const { isActive } = useClickContext();

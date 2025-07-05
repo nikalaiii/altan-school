@@ -1,16 +1,10 @@
 import { useEffect } from "react";
-import "./App.css";
-import { About } from "./components/about/About";
-import Categories from "./components/categories";
-import Collection from "./components/collection";
-import { Follow } from "./components/follow/Follow";
-import Header from "./components/header";
-import NavBar from "./shared/components/NavBar";
+import { About, Header, Follow, Categories, Collection } from "./components";
+import { NavBar, MessageClick, ErrorBoundary } from "./shared/components";
 import { useDispatch } from "react-redux";
 import { fetchTypography } from "./features/typographySlice";
 import { fetchMedia } from "./features/mediaSlice";
-import { useClickContext } from "./shared/api/ClickContext/ClickContext";
-import MessageClick from "./shared/components/MessageClick";
+import { useClickContext } from "./shared/contexts";
 
 function App() {
   const { triggerClick } = useClickContext();
@@ -22,7 +16,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <ErrorBoundary>
       <NavBar />
       <Header />
       <Categories />
@@ -31,7 +25,7 @@ function App() {
       <Follow />
 
       <MessageClick />
-    </>
+    </ErrorBoundary>
   );
 }
 
