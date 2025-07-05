@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  transition: all 0.3s ease;
 }
 
 html {
@@ -31,8 +30,14 @@ a {
   font-size: clamp(1rem, 1.5vw, 2rem);
 }
 
-button {
+button,
+a {
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+img {
+  transition: all 0.3s ease;
 }
 
 button:hover {

@@ -26,15 +26,19 @@ export const Categories: React.FC = () => {
           {media ? (
             Object.values(media).map((image, index) => {
               return (
-                <img
-                  onClick={() => triggerClick()}
-                  key={index}
-                  src={image ?? `./images/category_${index + 1}.png`}
-                  className={`${styles.categories__image} ${
+                <div
+                  className={`${styles.categories__viewport} ${
                     styles[`categories__image--${index + 1}`]
                   }`}
-                  alt="category"
-                />
+                >
+                  <img
+                    onClick={() => triggerClick()}
+                    key={index}
+                    src={image ?? `./images/category_${index + 1}.png`}
+                    className={`${styles.categories__image}`}
+                    alt="category"
+                  />
+                </div>
               );
             })
           ) : (
