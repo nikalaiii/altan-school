@@ -1,0 +1,64 @@
+@import "../../../shared/styles/main.scss";
+
+.nav {
+  width: 100%;
+  position: fixed;
+
+  @include set-size(100vw, $nav-bar-height);
+  background-color: #fff;
+
+  @include set-flex(row, space-between, center);
+  @include on1290 {
+    justify-content: space-around;
+  }
+
+  padding-inline: 2rem;
+  flex-wrap: nowrap;
+  z-index: 999;
+
+  &__title {
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 2rem);
+  }
+
+  &__links {
+    @include set-flex(row, space-between, center);
+    gap: 2rem;
+
+    @include on759 {
+      display: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background-color: black;
+      transition: all 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__menuLink {
+    @media (min-width: 759px) {
+      display: none;
+    }
+    display: block;
+  }
+
+  &__menuIcon {
+    @media (min-width: 759px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "plantImage": "./images/plant_header.png"
+  },
+  "categories": {
+    "category1": "./images/category_1.png",
+    "category2": "./images/category_2.png",
+    "category3": "./images/category_3.png",
+    "category4": "./images/category_4.png",
+    "category5": "./images/category_5.png"
+  },
+  "collection": {
+    "collection1": "./images/collection_1.png",
+    "collection2": "./images/collection_2.png",
+    "collection3": "./images/collection_3.png"
+  },
+  "about": {
+    "aboutImage": "./images/about.png"
+  },
+  "follow": {
+    "followImage": "./images/follow.png"
+  },
+  "navbar": {
+    "burgerMenu": "./images/burger-menu.png"
+  }
+} 

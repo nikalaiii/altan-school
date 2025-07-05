@@ -1,0 +1,94 @@
+@import "../../shared/styles/main.scss";
+
+p {
+  margin: 0;
+}
+
+.about {
+  width: 100vw;
+  margin-top: 10vh;
+
+  &__content {
+    margin: auto;
+
+    max-width: $content-max-width;
+    padding-inline: $content-padding-inline;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 2rem;
+
+    @include on759 {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(5, auto);
+      justify-items: center;
+      row-gap: 2rem;
+      padding-inline: calc($content-padding-inline / 2);
+    }
+  }
+
+  &__title {
+    grid-row: 1 / 1;
+    grid-column: 2 / -1;
+
+    @include on759 {
+        grid-column: 1 / -1;
+    }
+  }
+
+  &__image {
+    max-height: 80vh;
+    grid-row: 1 / -1;
+    grid-column: 1 / 1;
+    object-fit: cover;
+
+    @include on759 {
+        grid-row: 3 / 3;
+        grid-column: 1 / -1;
+        max-height: 60vh;
+        width: 100%;
+    }
+  }
+
+  &__text {
+    max-width: 1080px;
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+
+    @include on759 {
+        grid-row: 2 / 2;
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+  }
+
+  &__subText {
+    max-width: 1080px;
+    grid-row: 3 / 3;
+    grid-column: 2 / 2;
+
+    @include on759 {
+        grid-row: 4 / 4;
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+  }
+
+  &__button {
+    grid-column: 2 / 2;
+    grid-row: 4 / 4;
+    background: none;
+    border: 5px solid, $color-green-button;
+    border-radius: 5px;
+    @include set-size(195px, 45px);
+
+    @include on759 {
+        grid-column: 1 / -1;
+        grid-row: 5 / 5;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}

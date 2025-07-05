@@ -1,0 +1,19 @@
+{
+    "header": {
+        "burger-menu": "/images/burger-menu.png",
+        "main-image": "images/plant-header.png"
+    }, 
+    "categories": {
+        "images": ["/images/category_1.png", "/images/category_2.png", "/images/category_3.png", "/images/category_4.png", "/images/category_5.png"],
+    },
+    "collection": {
+        "images": ["/images/collection_1.png", "/images/collection_1.png", "/images/collection_1.png"]
+    },
+    "about": {
+        "image": "/images/about.png"
+    },
+    "follow": {
+        "image": "/images/follow.png"
+    }
+    
+}

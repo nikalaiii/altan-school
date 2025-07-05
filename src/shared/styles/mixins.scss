@@ -1,0 +1,32 @@
+@mixin set-flex($direction, $jusify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jusify;
+    align-items: $align;
+};
+
+@mixin on1290 {
+     @media (max-width: 1290px) {
+    @content;
+  }
+};
+@mixin on759 {
+     @media (max-width: 759px) {
+    @content;
+  }
+};
+
+@mixin set-min-limit ($width, $height) {
+  min-width: $width;
+  min-height: $height;
+}
+
+@mixin set-max-limit ($width, $height) {
+  max-width: $width;
+  max-height: $height;
+}
+
+@mixin set-size ($width, $height) {
+  width: $width;
+  height: $height;
+}
