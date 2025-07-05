@@ -16,7 +16,7 @@ export const Follow: React.FC = () => {
   }
 
   return (
-    <footer id="contact" className={styles.follow}>
+    <footer id="contacts" className={styles.follow}>
       <div className={styles.follow__content}>
         <form
           onSubmit={(e) => {

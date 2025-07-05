@@ -20,7 +20,7 @@ export const ClickProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     
     timeoutRef.current = setTimeout(() => {
       setIsActive(false);
-    }, 5000);
+    }, 2000);
   }, []);
 
   return (
