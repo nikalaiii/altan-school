@@ -60,6 +60,11 @@
       vertical-align: top; 
     }
 
+    &:focus {
+      outline: none;
+      border-color: darken($color-green-button, 20%)
+    }
+
     &--area {
       height: 200px;
     }
