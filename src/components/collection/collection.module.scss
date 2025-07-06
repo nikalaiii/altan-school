@@ -50,6 +50,7 @@
 
     &--2 {
         min-width: 180px;
+        z-index: 100;
     }
     &--3 {
         @include on759 {

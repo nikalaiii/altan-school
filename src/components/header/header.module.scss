@@ -2,14 +2,13 @@
 
 .header {
   background-color: $color-milk-white;
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
   padding-top: $nav-bar-height; // for space with nav-bar
 
   &__content {
     position: relative;
     max-width: $content-max-width;
-    height: 100%;
+    min-height: 100vh;
     margin: auto;
     padding: 0 2rem;
 
@@ -33,6 +32,13 @@
     @include on759 {
       padding: 0 1rem;
       align-items: center;
+      margin-top: 0;
+    }
+
+    @include on360 {
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(3, auto);
+      align-content: center;
     }
   }
 
@@ -48,20 +54,26 @@
       max-width: 40vw;
     }
 
-    @media (max-width: 460px) {
+    @media (max-width: 460px) { // some width endoints was not be realized as a mixins, because they's usage are rare in project
       max-width: 35vh;
       grid-column: 1 / -1;
+    }
+
+    @include on360 {
+      width: 100%;
+      align-items: center;
+      max-width: 100%;
     }
   }
 
   &__image {
-    @include set-max-limit (580px, 600px);
-    @include set-min-limit (220px, 280px);
+    @include set-max-limit(580px, 600px);
+    @include set-min-limit(220px, 280px);
     grid-column: 1 / 1;
     grid-row: 1 / -1;
     width: clamp(200px, 40vw, 600px);
-    height: auto; 
-    max-width: 100%; 
+    height: auto;
+    max-width: 100%;
     display: block;
     align-self: center;
     justify-self: center;
@@ -69,10 +81,18 @@
     @include on759 {
       grid-row: 2 / 2;
       grid-column: 2 / 2;
+      justify-self: end;
     }
 
     @media (max-width: 460px) {
       transform: translateX(50%);
+    }
+
+    @include on360 {
+      grid-column: 1 / -1;
+      grid-row: 3 / 3;
+      transform: translateX(0);
+      justify-self: center;
     }
   }
 
@@ -81,6 +101,7 @@
     grid-column: 2 / 2;
     font-size: clamp(1.5rem, 4vw, 3rem);
     letter-spacing: 0.2rem;
+    text-align: center;
 
     @include on759 {
       grid-row: 1 / 2;
@@ -93,7 +114,15 @@
     max-width: 900px;
 
     @include on759 {
+      max-width: 50vh;
+    }
+
+    @media (max-width: 460px) {
       max-width: 70%;
+    }
+    @include on360 {
+      justify-self: center;
+      max-width: 100%;
     }
   }
 

@@ -16,6 +16,12 @@
   }
 };
 
+@mixin on360 {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
 @mixin set-min-limit ($width, $height) {
   min-width: $width;
   min-height: $height;
